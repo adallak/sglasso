@@ -1,11 +1,10 @@
 Package: sglasso
-Title: What the Package Does (One Line, Title Case)
+Title: Simplified Graphical Lasso
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Aramayis", "Dallakyan", , "dallakyan.aramayis@gmail.com", role = c("aut", "cre"))
+Description: Implements GLasso algorithm using modifications proposed in Dallakyan and Pourahmadi (2024)
+License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
