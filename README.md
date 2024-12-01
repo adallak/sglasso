@@ -1,1 +1,1 @@
-Simplified Graphical Lasso
+# Simplified Graphical Lasso
