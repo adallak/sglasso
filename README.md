@@ -44,4 +44,4 @@ theta = sglasso(S, lambda = 0.1)$theta
 ```
 
 
-To select threshold via cross-validation use the function `CVsglasso'.
+To select threshold via cross-validation use the function `CVsglasso`.
