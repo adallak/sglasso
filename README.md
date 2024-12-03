@@ -16,6 +16,7 @@ devtools::install_github("adallak/sglasso")
 ```
 
 ## Usage
+### Data generation
 ```s
 library(sglasso)
 library(huge)
@@ -26,7 +27,7 @@ prob = 0.6
 S <- huge.generator(n =n, d = p, prob = prob)$sigmahat
 ```
 
-## Estimating precision matrix with a fixed tuning parameter
+### Estimating precision matrix with a fixed tuning parameter
 
 The `sglasso` function takes the following parameters:
 
@@ -43,5 +44,5 @@ The `sglasso` function takes the following parameters:
 theta = sglasso(S, lambda = 0.1)$theta
 ```
 
-
-To select threshold via cross-validation use the function `CVsglasso`.
+### With cross-validation
+To select the threshold via cross-validation use the function `CVsglasso`.
