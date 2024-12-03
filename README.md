@@ -24,7 +24,8 @@ set.seed(12)
 p <- 50
 n <- 200
 prob = 0.6
-S <- huge.generator(n =n, d = p, prob = prob)$sigmahat
+X <- huge.generator(n =n, d = p, prob = prob)$data
+S <- cov(X)
 ```
 
 ### Estimating precision matrix with a fixed tuning parameter
@@ -46,3 +47,6 @@ theta = sglasso(S, lambda = 0.1)$theta
 
 ### With cross-validation
 To select the threshold via cross-validation use the function `CVsglasso`.
+```s
+cv = CVsglasso(X, lambda = 10^seq(-3, 3, 0.1))
+```
