@@ -17,7 +17,7 @@ devtools::install_github("adallak/sglasso")
 
 ## Usage
 ```s
-library(SC)
+library(sglasso)
 library(huge)
 set.seed(12)
 p <- 50
