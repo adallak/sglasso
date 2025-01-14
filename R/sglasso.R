@@ -59,10 +59,10 @@ sglasso <-function(S, init_theta = NULL, lambda = 0.1,
 
 sglasso_R <- function(X = NULL, S = NULL,  lambda = 0.1,
                               init_theta = NULL, niter = 30, inner_niter = 100,
-                              tolerance=1e-4, tol.type = c("max","ave", "F"),
-                              inner.tolerance = 1e-4,
+                              tolerance=1e-5, tol.type = c("max","ave", "F"),
+                              inner.tolerance = 1e-7,
                               pen.diag = TRUE, standardize = FALSE,
-                              thresh = 1e-6, trace.objfnct = FALSE)
+                              thresh = 1e-5, trace.objfnct = FALSE)
 {
       if (is.null(X) && is.null(S)){
             stop("one of X or S should be non-null")
@@ -124,7 +124,7 @@ sglasso_R <- function(X = NULL, S = NULL,  lambda = 0.1,
                                        inner.tolerance)
                   G = res$grad_vec
                   u = res$u
-                  beta = -G/ denom
+                  beta = -G/ (2 * denom)
                   ## Update theta
                   theta[-i, i] = beta
                   theta[i, -i] = beta
