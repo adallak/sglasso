@@ -1,10 +1,10 @@
 # Simplified Graphical Lasso
 ## Introduction
 
-The `sglasso` is an R package that implements Graphical Lasso algorithm using modification proposed in Dallakyan and 
-Pourahmadi (2024), available in [https://arxiv.org/abs/2403.12357].
+The `sglasso` is an R package that implements the Graphical Lasso algorithmwith the modifications proposed in Dallakyan and 
+Pourahmadi (2024). The paper is available at [https://arxiv.org/abs/2403.12357].
 
-The main function is `sglasso`, which takes a sample covariance matrix of the observations and returns the estimate of precision matrix. 
+The main function, `sglasso`, takes a sample covariance matrix of the observations as input and returns an estimate of the precision matrix. 
 
 ## Installation
 
