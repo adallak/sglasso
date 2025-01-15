@@ -28,6 +28,7 @@ gen = huge.generator(n =n, d = p, prob = prob)
 X <- gen$data
 S <- gen$Sigmahat
 Theta_true = gen$omega
+Theta_true[abs(Theta_true) < 1e-8] = 0
 ```
 
 ### Estimating precision matrix with a fixed tuning parameter
