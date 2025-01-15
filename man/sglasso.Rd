@@ -10,9 +10,9 @@ sglasso(
   lambda = 0.1,
   pen.diag = TRUE,
   niter = 30,
-  inner_niter = 100,
-  tolerance = 1e-04,
-  inner.tolerance = 1e-04,
+  inner_niter = 1000,
+  tolerance = 1e-05,
+  inner.tolerance = 1e-07,
   thresh = 1e-04,
   tol.type = c("max", "ave", "F"),
   trace.objfnct = FALSE
@@ -27,7 +27,7 @@ sglasso(
 
 \item{niter}{maximum number of outer itarations; default is 30}
 
-\item{inner_niter}{maximum number of inner iterations; default is 100}
+\item{inner_niter}{maximum number of inner iterations; default is 1000}
 
 \item{tolerance}{tolerance value for convergence;}
 
@@ -35,7 +35,7 @@ sglasso(
 
 \item{thresh}{threshold value}
 
-\item{tol.type}{default is "max" which the relative difference of the maximum of precision matrices across two successive itarations}
+\item{tol.type}{default is "max" which the relative difference of the maximum of precision matrices across two successive iterations}
 
 \item{trace.objfnct}{whether to compute objective function. Increases computation time}
 

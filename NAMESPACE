@@ -2,5 +2,6 @@
 
 export(CVsglasso)
 export(box_qp_f)
+export(compareMat)
 export(sglasso)
 useDynLib(sglasso, .registration = TRUE)
