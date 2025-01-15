@@ -8,18 +8,18 @@
 #' @param lambda  tuning parameter, default is 0.1
 #' @param pen.diag whether to penalize diagonal elements; `TRUE` by default
 #' @param niter   maximum number of outer itarations; default is 30
-#' @param inner_niter maximum number of inner iterations; default is 100
+#' @param inner_niter maximum number of inner iterations; default is 1000
 #' @param tolerance tolerance value for convergence;
 #' @param inner.tolerance tolerance value for convergence of the inner loop;
-#' @param tol.type default is "max" which the relative difference of the maximum of precision matrices across two successive itarations
+#' @param tol.type default is "max" which the relative difference of the maximum of precision matrices across two successive iterations
 #' @param thresh  threshold value
 #' @param trace.objfnct whether to compute objective function. Increases computation time
 #' @return `theta` p x p estimated precision matrix
 #' @return `niter` number of iterations until convergence
 #' @export
 sglasso <-function(S, init_theta = NULL, lambda = 0.1,
-                   pen.diag = TRUE, niter = 30, inner_niter = 100,
-                   tolerance=1e-4, inner.tolerance = 1e-4,
+                   pen.diag = TRUE, niter = 30, inner_niter = 1000,
+                   tolerance=1e-5, inner.tolerance = 1e-7,
                    thresh = 1e-4, tol.type = c("max", "ave", "F"),
                    trace.objfnct = FALSE){
    tol.type = match.arg(tol.type)
@@ -58,7 +58,7 @@ sglasso <-function(S, init_theta = NULL, lambda = 0.1,
 
 
 sglasso_R <- function(X = NULL, S = NULL,  lambda = 0.1,
-                              init_theta = NULL, niter = 30, inner_niter = 100,
+                              init_theta = NULL, niter = 30, inner_niter = 1000,
                               tolerance=1e-5, tol.type = c("max","ave", "F"),
                               inner.tolerance = 1e-7,
                               pen.diag = TRUE, standardize = FALSE,
@@ -124,7 +124,7 @@ sglasso_R <- function(X = NULL, S = NULL,  lambda = 0.1,
                                        inner.tolerance)
                   G = res$grad_vec
                   u = res$u
-                  beta = -G/ (2 * denom)
+                  beta = -G/ denom
                   ## Update theta
                   theta[-i, i] = beta
                   theta[i, -i] = beta
