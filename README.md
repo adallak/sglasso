@@ -50,7 +50,7 @@ Theta = sglasso(S, lambda = 0.1)$theta
 
 ### Compare the true and estimated graphs
 ```s
-theta = compareMat(Theta, Theta_true(
+theta = compareMat(Theta, Theta_true)
 ```
 
 ### With cross-validation
