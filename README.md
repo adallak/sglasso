@@ -23,9 +23,11 @@ library(huge)
 set.seed(12)
 p <- 50
 n <- 200
-prob = 0.6
-X <- huge.generator(n =n, d = p, prob = prob)$data
-S <- cov(X)
+prob = 0.4
+gen = huge.generator(n =n, d = p, prob = prob) 
+X <- gen$data
+S <- gen$Sigmahat
+Theta_true = gen$omega
 ```
 
 ### Estimating precision matrix with a fixed tuning parameter
@@ -42,7 +44,12 @@ The `sglasso()` function takes the following parameters:
 * `thresh` - threshold value.
 
 ```s
-theta = sglasso(S, lambda = 0.1)$theta
+Theta = sglasso(S, lambda = 0.1)$theta
+```
+
+### Compare the true and estimated graphs
+```s
+theta = compareMat(Theta, Theta_true(
 ```
 
 ### With cross-validation
